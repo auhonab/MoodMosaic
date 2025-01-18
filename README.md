@@ -31,8 +31,8 @@ MoodMosaic is a simple and creative web application that helps users explore the
 ## Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript (all in one file for simplicity).
-- **Image Service**: Unsplash API.
-- **Deployment**: Netlify / Vercel.
+- **Image Service**: Unsplash API, Python
+- **Deployment**: Vercel.
 
 ---
 
