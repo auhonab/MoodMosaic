@@ -8,7 +8,40 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Full height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            background: linear-gradient(to bottom right, #a8d8ea, #f0f4f8); /* Light gradient blue */
+        }
+        h1 {
+            color: #2c3e50; /* Darker color for the title */
+        }
+        #moodForm {
+            margin: 20px 0;
+        }
+        select {
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #4CAF50; /* Green border */
+            border-radius: 5px;
+            background-color: #ffffff; /* White background for the select */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #4CAF50; /* Green button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
         }
         #result {
             margin-top: 20px;
@@ -24,6 +57,7 @@
         #moodQuote {
             font-size: 1.2em;
             margin-top: 10px;
+            color: #34495e; /* Darker color for the quote */
         }
     </style>
 </head>
