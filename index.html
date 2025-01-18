@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Art and Quote</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+        #moodImage {
+            max-width: 50%; /* Adjusted size to 50% of the container */
+            height: auto;
+            border: 5px solid #4CAF50; /* Green border */
+            border-radius: 10px; /* Rounded corners */
+            display: none; /* Initially hidden */
+            margin: 0 auto; /* Center the image */
+        }
+        #moodQuote {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mood Art and Quote</h1>
+    <p>Select your mood:</p>
+    <form id="moodForm">
+        <select id="moodSelect">
+            <option value="">--Select a mood--</option>
+            <option value="happy">Happy</option>
+            <option value="anxious">Anxious</option>
+            <option value="sad">Sad</option>
+            <option value="excited">Excited</option>
+            <option value="depressed">Depressed</option>
+        </select>
+        <button type="submit">Explore</button>
+    </form>
+
+    <div id="result">
+        <img id="moodImage" src="" alt="Mood Art" style="display:none;">
+        <p id="moodQuote"></p>
+    </div>
+
+    <script>
+        document.getElementById('moodForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const mood = document.getElementById('moodSelect').value;
+
+            if (mood) {
+                fetch(`/get_mood_data?mood=${mood}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('moodImage').src = data.imageUrl;
+                        document.getElementById('moodImage').style.display = 'block';
+                        document.getElementById('moodQuote').innerText = data.quote;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching mood data:', error);
+                    });
+            } else {
+                alert('Please select a mood.');
+            }
+        });
+    </script>
+</body>
+</html>
