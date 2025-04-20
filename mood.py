@@ -4,7 +4,7 @@ import random
 def fetch_random_image(mood):
     # Unsplash API endpoint for random images
     mood = mood + " art"
-    access_key = "egqPJIQnj9aX2_NhFIYDSSbSHj11QB_MvvOFLJbntsE"  # Replace with your Unsplash API access key
+    access_key =   # Replace with your Unsplash API access key
     url = f"https://api.unsplash.com/photos/random?query={mood}&client_id={access_key}"
     
     try:
